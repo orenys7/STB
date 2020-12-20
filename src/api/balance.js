@@ -20,6 +20,7 @@ router.get("/:quote", async (req, res, next) => {
 
     const incomeHtml = await fetchData(incomeUrl);
     const balanceHtml = await fetchData(balanceUrl);
+    
     const sales = getStats(incomeHtml.data, categories.sales);
     const growthSales = growthRate(sales);
     const netIncome = getStats(incomeHtml.data, categories.netIncome);
